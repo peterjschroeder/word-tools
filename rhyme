@@ -1,0 +1,21 @@
+#!/usr/bin/env python3
+import pydoc, re, sys
+from Phyme import Phyme
+
+def main():
+    if len(sys.argv) == 1:
+        print('rhyme <word>')
+    else:
+        ph = Phyme()
+        rhymes = ""
+        for num, i in enumerate(ph.get_perfect_rhymes(sys.argv[1]).values()):
+            if num > 0:
+                rhymes += '\n'
+            for j in sorted(i):
+                rhymes += j+'\n'
+        rhymes = re.sub(r".*\(.*?\)\n",r"", rhymes, flags=re.MULTILINE)
+        pydoc.pager(rhymes)
+
+if __name__ == "__main__":
+    main()
+

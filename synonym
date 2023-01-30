@@ -1,0 +1,25 @@
+#!/usr/bin/env python3
+import nltk, sys
+from xdg.BaseDirectory import *
+
+nltk_data = os.path.join(xdg_data_home, "nltk_data")
+os.makedirs(nltk_data, exist_ok=True)
+
+def main():
+    if len(sys.argv) == 1:
+        print('synonym <word>')
+    else:
+        nltk.download('wordnet')
+
+        synonyms = []
+
+        for i in nltk.corpus.wordnet.synsets(sys.argv[1]):
+            for j in i.lemmas():
+                if j.name() not in synonyms and j.name() != sys.argv[1]:
+                    synonyms.append(j.name())
+
+        print('\n'.join(sorted(synonyms)))
+
+if __name__ == "__main__":
+    main()
+
