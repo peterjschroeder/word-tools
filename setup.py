@@ -10,7 +10,6 @@ setup(
         author='Peter J. Schroeder', 
         author_email='peterjschroeder@gmail.com', 
         url='https://github.com/peterjschroeder/world-tools',
-        scripts=['rhyme', 'synonym'],
-        install_requires=['git+https://github.com/peterjschroeder/python-abbreviate.git']
+        scripts=['rhyme', 'synonym']
 )
 
