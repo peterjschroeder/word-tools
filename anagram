@@ -6,6 +6,7 @@ def main():
         print('anagram <word>')
     else:
         os.system('an "%s" -m %d -w' % (sys.argv[1], len(sys.argv[1])))
+        sys.exit()
 
 if __name__ == "__main__":
     main()
