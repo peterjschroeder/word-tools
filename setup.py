@@ -10,6 +10,7 @@ setup(
         author='Peter J. Schroeder', 
         author_email='peterjschroeder@gmail.com', 
         url='https://github.com/peterjschroeder/world-tools',
-        scripts=['rhyme', 'synonym']
+        scripts=['rhyme', 'synonym'],
+        install_requires=['Phyme', 'nltk']
 )
 
